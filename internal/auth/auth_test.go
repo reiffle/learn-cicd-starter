@@ -26,7 +26,7 @@ func TestGetAPIKey(t *testing.T) {
 		{
 			name: "Malformed Authorization Header - No Space",
 			headers: http.Header{
-				"Authorization": []string{"ApiKey12345"},
+				"Authorization": []string{"ApiKey12345"}, //http.Header in Go is defined as map[string][]string
 			},
 			expectErr:  true,
 			errMessage: "malformed authorization header",
