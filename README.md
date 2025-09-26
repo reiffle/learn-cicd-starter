@@ -1,4 +1,4 @@
-![Test Verification Status](https://github.com/reiffle/learn-cicd-starter/actions/workflows/main/badge.svg)
+![Test Verification Status](https://github.com/reiffle/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
 
 # learn-cicd-starter (Notely)
 
