@@ -20,7 +20,6 @@ jobs:
 
       - name: Test Go code
         run: go test ./... -cover
-<<<<<<< HEAD
 
   style:
     name: Style
@@ -37,5 +36,3 @@ jobs:
 
       - name: Check code style
         run: test -z $(go fmt ./...)
-=======
->>>>>>> 6b4b4ff3a310e89e0bb9548103a96aaaf79c728d
