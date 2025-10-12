@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+        # yaml
+      - name: Mark workspace as safe
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -20,3 +24,16 @@ jobs:
 
       - name: Build Application
         run: ./scripts/buildprod.sh
+
+      - name: Set up gcloud auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+          project_id: balmy-elf-474204-h5
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Build and push image to Artifact Registry
+        run: |
+          gcloud builds submit --tag us-central1-docker.pkg.dev/balmy-elf-474204-h5/notely-ar-repo/notely:latest .
