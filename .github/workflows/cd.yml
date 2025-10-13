@@ -39,4 +39,4 @@ jobs:
           gcloud builds submit --tag us-central1-docker.pkg.dev/balmy-elf-474204-h5/notely-ar-repo/notely:latest .
       
       - name: Deploy to Cloud Run
-        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/balmy-elf-474204-h5/notely-ar-repo/notely@sha256:ec69fd0ce6aca5e0c0c62d3501a7cca652c6731d06af6b47ccdcb3b8b098cf17 --region us-central1 --allow-unauthenticated --project balmy-elf-474204-h5 --max-instances=4
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/balmy-elf-474204-h5/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project balmy-elf-474204-h5 --max-instances=4
